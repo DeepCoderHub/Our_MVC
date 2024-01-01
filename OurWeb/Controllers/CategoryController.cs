@@ -15,7 +15,7 @@ namespace OurWeb.Controllers
         {
             // var objCategoryList = _db.Categories.ToList(); // var and List<Category> works same so it's depend on you to use.
             List<Category> objCategoryList=_db.Categories.ToList();
-            return View();
+            return View(objCategoryList);
         }
     }
 }

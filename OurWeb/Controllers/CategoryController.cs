@@ -54,7 +54,7 @@ namespace OurWeb.Controllers
             return View(categoryFromDb);
         }
         [HttpPost]
-        public IActionResult aCreate(Category obj)
+        public IActionResult Edit(Category obj)
         {
             //if (obj.Name == obj.DisplayOrder.ToString())
             //{
@@ -63,7 +63,7 @@ namespace OurWeb.Controllers
 
             if (ModelState.IsValid)
             {
-                _db.Categories.Add(obj);
+                _db.Categories.Update(obj);
                 _db.SaveChanges();
                 return RedirectToAction("Index", "Category");
             }

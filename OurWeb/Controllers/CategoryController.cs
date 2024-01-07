@@ -25,14 +25,11 @@ namespace OurWeb.Controllers
         [HttpPost]
         public IActionResult Create(Category obj)
         {
-            if (obj.Name == obj.DisplayOrder.ToString())
-            {
-                ModelState.AddModelError("name", "The DisplayOrder cannot exactly match the Name");
-            }
-            if (obj.Name!=null && obj.Name.ToLower() == "test")
-            {
-                ModelState.AddModelError("", "Test is an invalid value");
-            }
+            //if (obj.Name == obj.DisplayOrder.ToString())
+            //{
+            //    ModelState.AddModelError("name", "The DisplayOrder cannot exactly match the Name");
+            //}
+           
             if (ModelState.IsValid)
             {
                 _db.Categories.Add(obj);
